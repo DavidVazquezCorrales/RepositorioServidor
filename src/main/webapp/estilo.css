@@ -1,0 +1,46 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-sep-2018, 17:39:24
+    Author     : David
+*/
+body{
+    background-color: #D9F9A5;
+}
+#datospersonales{
+     position: relative;
+
+  width  : 350px;
+  height : 100px;
+  margin : auto;
+}
+#otrosdatos{
+     position: relative;
+
+  width  : 350px;
+  height : 240px;
+  margin : auto;
+}
+#medios{
+     position: relative;
+
+  width  : 350px;
+  height : 200px;
+  margin : auto;
+}
+textarea, select, button {
+  width : 150px;
+  margin: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+#boton{
+     
+     margin-left: 45%;
+     
+}
