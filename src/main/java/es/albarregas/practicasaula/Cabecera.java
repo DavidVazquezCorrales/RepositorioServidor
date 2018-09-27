@@ -7,9 +7,7 @@ package es.albarregas.practicasaula;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author David
  */
-@WebServlet(name = "registroFormulario", urlPatterns = {"/registroFormulario"})
-public class registroFormulario extends HttpServlet {
+@WebServlet(name = "Cabecera", urlPatterns = {"/Cabecera"})
+public class Cabecera extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,44 +38,27 @@ public class registroFormulario extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet registroFormulario</title>");            
+            out.println("<title>Servlet Cabecera</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet registroFormulario at " + request.getContextPath() + "</h1>");
-           
-            out.println("<table border=\"1\" align=\"center\" style=\"background-color:#D2D68D\" cellpadding = \"5\"" + 
-                " cellspacing = \"5\">");
-            Map<String, String[]> map = request.getParameterMap();
-             Set set = map.entrySet();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            Map.Entry<String, String[]> entry = (Map.Entry<String, String[]>) it.next();
-            String paramName = entry.getKey();
-            out.print("<tr><td>" + paramName + "</td><td>");
-            String[] paramValues = entry.getValue();
-            if (paramValues.length == 1) {
-                String paramValue = paramValues[0];
-                if (paramValue.length() == 0)
-                    out.println("<td><b></b><img src=\"HTML\\error.png\">");
-                else{
-                    out.println(paramValue);}
-            } else {
-                out.println("<ul>");
-                for (int i = 0; i < paramValues.length; i++) {
-                    if(paramValues[i].equals("Nombre")||paramValues[i].equals("Usuario")||paramValues[i].equals("Contraseña")){
-                    out.println("<td><b></b><img src=\"HTML\\check.png\">");
-                    }else{
-                    out.println("<li>" + paramValues[i]+ "Esto que es" + "</li>");}
-                }
-                out.println("</ul>");
-            }
-        }
-           
-             out.println("</table>");
-         
-            
-            
-            
+            Enumeration<String> headerNames = request.getHeaderNames();
+
+		while (headerNames.hasMoreElements()) {
+                        int i=1;
+			String headerName = headerNames.nextElement();
+			
+			out.write("\n  <br>");
+                        out.write(headerName);
+                           i++;
+			Enumeration<String> headers = request.getHeaders(headerName);
+			while (headers.hasMoreElements()) {
+				String headerValue = headers.nextElement();
+				out.write("\t" + headerValue);
+				out.write("\n<br>");
+			}
+
+		}
+            out.println("<br><a href=\"index.html\">Menu inicial</a>");
             out.println("</body>");
             out.println("</html>");
         }
