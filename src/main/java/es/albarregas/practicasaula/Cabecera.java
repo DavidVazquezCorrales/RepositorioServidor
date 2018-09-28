@@ -44,12 +44,12 @@ public class Cabecera extends HttpServlet {
             Enumeration<String> headerNames = request.getHeaderNames();
 
 		while (headerNames.hasMoreElements()) {
-                        int i=1;
+                        
 			String headerName = headerNames.nextElement();
 			
 			out.write("\n  <br>");
                         out.write(headerName);
-                           i++;
+                           
 			Enumeration<String> headers = request.getHeaders(headerName);
 			while (headers.hasMoreElements()) {
 				String headerValue = headers.nextElement();
