@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author David
  */
-@WebServlet(name = "formularioComplejo", urlPatterns = {"/formularioComplejo"})
-public class FormularioComplejo extends HttpServlet {
+@WebServlet(name = "RegistroFecha", urlPatterns = {"/RegistroFecha"})
+public class RegistroFecha extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +40,9 @@ public class FormularioComplejo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet formularioComplejo</title>");            
+            out.println("<title>Servlet RegistroFecha</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1 align=\"center\">"+"Formulario Complejo"+"</h1>");
             out.println("<table border=\"1\" align=\"center\" style=\"background-color:#D2D68D\" cellpadding = \"5\"" + 
                 " cellspacing = \"5\">");
             Map<String, String[]> map = request.getParameterMap();
@@ -52,7 +50,7 @@ public class FormularioComplejo extends HttpServlet {
         Iterator it = set.iterator();
         while (it.hasNext()) {
             Map.Entry<String, String[]> entry = 
-                (Entry<String, String[]>) it.next();
+                (Map.Entry<String, String[]>) it.next();
             String paramName = entry.getKey();
             out.print("<tr><td>" + paramName + "</td><td>");
             String[] paramValues = entry.getValue();
@@ -73,11 +71,12 @@ public class FormularioComplejo extends HttpServlet {
            
              out.println("</table>");
              out.println("<p align=\"center\"><a href='"+request.getContextPath()+"'>Menú principal</a></p>");
-            out.println("</body>");
+             
+                out.println("</body>");
             out.println("</html>");
         }
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
