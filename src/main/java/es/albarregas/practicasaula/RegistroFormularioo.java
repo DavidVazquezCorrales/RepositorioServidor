@@ -69,7 +69,7 @@ public class RegistroFormularioo extends HttpServlet {
             if (paramValues.length == 1) {
                 String paramValue = paramValues[0];
                 if (paramValue.length() == 0 && paramName.equals("Nombre")){
-                    out.println("<form id='form' name='form' method=\"POST\" action=\"registroFormulario\">");
+                    out.println("<form id='form' name='form' method=\"POST\" action=\"RegistroFormularioo\">");
                     out.println("<input type=\"text\" name=\"Nombre\"/><br/>  ");
                     out.println("<td><b></b><img src=\"HTML\\error.png\" width=\"20\" height=\"20\">");
                 }else if(paramValue.length()==0 && paramName.equals("Password")){

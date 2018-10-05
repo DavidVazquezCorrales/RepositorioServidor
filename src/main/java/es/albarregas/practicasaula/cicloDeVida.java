@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author David
  */
-@WebServlet(name = "CicloDeVida", urlPatterns = {"/CicloDeVida"})
+@WebServlet(name = "cicloDeVida", urlPatterns = {"/cicloDeVida"})
 public class cicloDeVida extends HttpServlet {
 public cicloDeVida(){
     super();
