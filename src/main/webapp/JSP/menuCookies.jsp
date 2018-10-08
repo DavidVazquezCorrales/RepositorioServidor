@@ -9,9 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../HTML/estilo.css" rel="stylesheet" type="text/css">
         <title>Menú Cookies</title>
     </head>
+    
     <body>
+        <div>
         <form name="formulario" method="post" action="controlDeCookies.jsp">
             <label name="Nombre">Nombre: </label>
             <input type="text" name="Nombre">
@@ -29,7 +32,7 @@
     if(mensaje !=null && mensaje!=""){
     %><%= mensaje %> <% } %>
         </form >
-   
+   </div>
     
     
     </body>
