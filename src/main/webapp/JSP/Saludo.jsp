@@ -16,7 +16,7 @@
     <body>
     <% String tratamiento=null;
     String nombre=request.getParameter("Nombre");
-    tratamiento=request.getParameter("Sexo".equals("hombre") ? "señor":"señora");
+    tratamiento=request.getParameter("Sexo".equals("Hombre") ? "señor":"señora");
     int hora= LocalTime.now().getHour();
     String saludo=null;
     if(hora>=8 && hora<13){

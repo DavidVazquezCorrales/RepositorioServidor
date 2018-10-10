@@ -18,8 +18,8 @@
     <body>
          <% String nombre=request.getParameter("nombre");
         String fechaNac= request.getParameter("fecha");
-        String[] array="";
-        array[1]="antonio";
+        String[] array=fechaNac.split("-");
+        
         
     int anio=Integer.parseInt(array[1]);
     int mes=Integer.parseInt(array[2]);

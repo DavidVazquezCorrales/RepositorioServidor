@@ -13,7 +13,7 @@ body{
 
 div{
     width: 30%;
-    margin-left:50%;
+    margin:auto;
     border: white 5px solid;
     padding-left: 10px;
 }
